@@ -118,14 +118,22 @@ float postfixEval::evaluate()
 		}
 		else if (token == token_variable)
 		{
-          if (Map_variables_float.empty()) throw expressionError("postfixEval: Map_variables_float fail");
-		  if (VariableQueue.empty()) throw expressionError("postfixEval: VariableQueue fail");
-			string variable = VariableQueue.front();
-			VariableQueue.pop();
+          if (Map_variables_float.empty())
+		  {
+			throw expressionError("postfixEval: Map_variables_float fail");
+		  }
+		  
+		if (VariableQueue.empty())
+		{
+			throw expressionError("postfixEval: VariableQueue fail");
+		}
+		
+		string variable = VariableQueue.front();
+		VariableQueue.pop();
 
-			float variable_valor = Map_variables_float[variable];
-			Map_variables_float.erase(variable);
-			operandStack.push(variable_valor);
+		float variable_valor = Map_variables_float[variable];
+		Map_variables_float.erase(variable);
+		operandStack.push(variable_valor);
 		}
 		else
 		{
