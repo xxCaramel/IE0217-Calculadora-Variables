@@ -17,10 +17,15 @@ using namespace std;
 #include "expsymbol.h"	// expressionSymbol class
 #include "d_except.h"	// for expressionError exception
 #include "infix2postfix.h"
+#include "variable_user_input.h"
 
 //+++++++++++++++++++
 // infix2postfix
 //+++++++++++++++++++
+
+double get_variable_input();
+
+
 bool infix2Postfix::evaluate_ifInt(int &i)
 {
   bool salida=false;
@@ -285,7 +290,7 @@ bool infix2Postfix::evaluate_ifVar(int &i)
   //Localiza o crea una $VAR en variables_float
   //Ingresa un token_variable en la cola de tokens
   //Además ingresa el nombre de la variable detectada en la cola de variables
-  Map_variables_float[variable]=0.0;
+  Map_variables_float[variable] = get_variable_input(variable);
   t_infixExpression.push(token_variable);
   VariableQueue.push(variable);
   return true;
@@ -467,3 +472,5 @@ map<string,float>& infix2Postfix::get_VarMap(void)
 {
   return Map_variables_float;
 }//_______________________________________________________
+
+

@@ -186,3 +186,79 @@
 	"enum_base.h"
 	"aritmetic_base.h"
 
+1621988813 source:/home/juanpa/Documents/uni/IE0217/IE0217-Calculadora-Variables/aritmetic_base.cc
+	<iostream>
+	<string>
+	<stack>
+	<queue>
+	<map>
+	"enum_base.h"
+	"aritmetic_base.h"
+
+1621988813 /home/juanpa/Documents/uni/IE0217/IE0217-Calculadora-Variables/enum_base.h
+
+1621988813 /home/juanpa/Documents/uni/IE0217/IE0217-Calculadora-Variables/aritmetic_base.h
+
+1621988813 source:/home/juanpa/Documents/uni/IE0217/IE0217-Calculadora-Variables/expsymbol.cc
+	<stack>
+	<queue>
+	"enum_base.h"
+	"expsymbol.h"
+
+1621988813 /home/juanpa/Documents/uni/IE0217/IE0217-Calculadora-Variables/expsymbol.h
+
+1622405480 source:/home/juanpa/Documents/uni/IE0217/IE0217-Calculadora-Variables/infix2postfix.cc
+	<iostream>
+	<string>
+	<stack>
+	<queue>
+	<map>
+	<ctype.h>
+	<stdlib.h>
+	"enum_base.h"
+	"aritmetic_base.h"
+	"expsymbol.h"
+	"d_except.h"
+	"infix2postfix.h"
+	"variable_user_input.h"
+
+1621988813 /home/juanpa/Documents/uni/IE0217/IE0217-Calculadora-Variables/d_except.h
+	<sstream>
+	<string>
+
+1621988813 /home/juanpa/Documents/uni/IE0217/IE0217-Calculadora-Variables/infix2postfix.h
+
+1621988813 source:/home/juanpa/Documents/uni/IE0217/IE0217-Calculadora-Variables/main_analizador_aritmetico.cc
+	<iostream>
+	<string>
+	<stack>
+	<queue>
+	<map>
+	"enum_base.h"
+	"aritmetic_base.h"
+	"expsymbol.h"
+	"infix2postfix.h"
+	"postfixEval.h"
+	"aritmetic_expression_eval.h"
+	"d_except.h"
+
+1621988813 /home/juanpa/Documents/uni/IE0217/IE0217-Calculadora-Variables/postfixEval.h
+
+1621988813 /home/juanpa/Documents/uni/IE0217/IE0217-Calculadora-Variables/aritmetic_expression_eval.h
+
+1622404250 source:/home/juanpa/Documents/uni/IE0217/IE0217-Calculadora-Variables/postfixEval.cc
+	<math.h>
+	<iostream>
+	<string>
+	<stack>
+	<queue>
+	<map>
+	<ctype.h>
+	<stdlib.h>
+	"enum_base.h"
+	"aritmetic_base.h"
+	"postfixEval.h"
+	"d_except.h"
+
+1622405831 /home/juanpa/Documents/uni/IE0217/IE0217-Calculadora-Variables/variable_user_input.h
+
