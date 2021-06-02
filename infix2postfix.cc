@@ -23,9 +23,6 @@ using namespace std;
 // infix2postfix
 //+++++++++++++++++++
 
-double get_variable_input();
-
-
 bool infix2Postfix::evaluate_ifInt(int &i)
 {
   bool salida=false;
@@ -265,7 +262,7 @@ bool infix2Postfix::evaluate_ifFunctions(int &i)
 bool infix2Postfix::evaluate_ifVar(int &i)
 {
   bool salida=false;
-  enum e_int_state {inicio_variable, segundo_variable,espera_final_variable} estado=inicio_variable;
+enum e_int_state {inicio_variable, segundo_variable,espera_final_variable} estado=inicio_variable;
   string variable="";
   while(!salida )
   {
@@ -437,7 +434,7 @@ bool infix2Postfix::makepostfix()
 		//  *********  process an operator or '('  **********
 		else if (isOperator(token) || (isFunction(token)) ||token == token_pizq)
 		{
-			if (token != isOperator(token))  rank--;
+			if (isOperator(token))  rank--;
 
 			if (rank < 0)
 				throw expressionError("infix2Postfix: Operand expected");	else
@@ -485,5 +482,3 @@ map<string,float>& infix2Postfix::get_VarMap(void)
 {
   return Map_variables_float;
 }//_______________________________________________________
-
-

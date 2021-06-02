@@ -18,10 +18,34 @@ using namespace std;
 void  _aritmetic_base::show_tokenlist(const char *msg,queue<t_aritmeticExpression> copy)
 {
   int length=copy.size();
-  cout << msg << " ";
+  cout << msg << " " << endl;
   for (int i=0;i< length;i++)
   {
-    cout << "<TOKEN:" << copy.front() << ">";
+    t_aritmeticExpression token=copy.front();
+    cout << "<";
+    switch (token)
+    {
+      case token_mas:      cout << "token_mas : ";break;
+      case token_menos:    cout << "token_menos : ";break;
+      case token_por:      cout << "token_por : ";break;
+      case token_div:      cout << "token_div : ";break;
+      case token_resto:    cout << "token_resto : ";break;
+      case token_pot:      cout << "token_pot : ";break;
+      case token_coseno:   cout << "token_coseno : ";break;
+      case token_seno:     cout << "token_seno : ";break;
+      case token_tangente: cout << "token_tangente : ";break;
+      case token_cosenoh:  cout << "token_cosenoh : ";break;
+      case token_senoh:    cout << "token_senoh : ";break;
+      case token_ln:       cout << "token_ln : ";break;
+      case token_exp:      cout << "token_exp : ";break;
+      case token_log:      cout << "token_log : ";break;
+      case token_pizq:     cout << "token_pizq : ";break;
+      case token_pder:     cout << "token_pder : ";break;
+      case token_numero:   cout << "token_mumero : ";break;
+      case token_variable: cout << "token_variable : ";break;
+      //default: break;
+    }
+    cout <<  token << ">" << endl;
     copy.pop();
   }
   cout << endl;

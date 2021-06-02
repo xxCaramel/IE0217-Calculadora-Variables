@@ -31,8 +31,7 @@ int main(void)
 	string infixExp;
 	cout << "Enter an infix expression: ";
 	getline(cin, infixExp);
-
-	while (infixExp != "")
+  while (infixExp != "")
 	{
 		try
 		{
@@ -42,7 +41,9 @@ int main(void)
         throw expressionError("infix2Postfix: Invalid expression");
 
       /// evaluate result from posfix.
-      cout << "Value of the expression = " << expression.evaluate() << endl << endl;
+      cout << "Posfix expresion =";
+      float result=expression.evaluate();
+      cout << "Value of the expression = " << result << endl << endl;
       getchar();
 		}
 
