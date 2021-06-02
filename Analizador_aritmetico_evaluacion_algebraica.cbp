@@ -44,6 +44,7 @@
 		<Unit filename="main_analizador_aritmetico.cc" />
 		<Unit filename="postfixEval.cc" />
 		<Unit filename="postfixEval.h" />
+		<Unit filename="variable_user_input.h" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
