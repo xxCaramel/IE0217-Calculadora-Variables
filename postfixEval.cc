@@ -123,17 +123,18 @@ float postfixEval::evaluate()
 			throw expressionError("postfixEval: Map_variables_float fail");
 		  }
 		  
-		if (VariableQueue.empty())
-		{
-			throw expressionError("postfixEval: VariableQueue fail");
-		}
-		
-		string variable = VariableQueue.front();
-		VariableQueue.pop();
+		  if (VariableQueue.empty())
+		  {
+		    throw expressionError("postfixEval: VariableQueue fail");
+		  }
+		  // Extrae de la cola VariableQueue el nombre de la variable
+		  // y con eso extrae el su valor guardado en el mapa. El
+		  // valor extraído se apila en el operandStack.
+		  string variable = VariableQueue.front();
+		  VariableQueue.pop();
 
-		float variable_valor = Map_variables_float[variable];
-		Map_variables_float.erase(variable);
-		operandStack.push(variable_valor);
+		  float variable_valor = Map_variables_float[variable];
+		  operandStack.push(variable_valor);
 		}
 		else
 		{
@@ -148,6 +149,9 @@ float postfixEval::evaluate()
 			operandStack.push(compute(left, right, token));
 		}
 	}
+
+	// Limpia el mapa una vez finalizado la evaluación
+	Map_variables_float.clear();
 
 	expValue = operandStack.top();
 	operandStack.pop();

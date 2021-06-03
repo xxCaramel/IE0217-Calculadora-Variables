@@ -276,6 +276,7 @@ enum e_int_state {inicio_variable, segundo_variable,espera_final_variable} estad
           estado=segundo_variable;
           break;
 
+      // Verifica si el primer character es una letra mayúscula
       case segundo_variable:
           if (isupper(car))
           {
@@ -288,7 +289,8 @@ enum e_int_state {inicio_variable, segundo_variable,espera_final_variable} estad
             return false;
           }
           break;
-
+      
+      // Se agrega la posibilidad de incluir el guion bajo ( _ )
       case espera_final_variable:
           if (isalpha(car)||isdigit(car)||car == '_')
           {
@@ -298,9 +300,19 @@ enum e_int_state {inicio_variable, segundo_variable,espera_final_variable} estad
     }
   }//while
   //Localiza o crea una $VAR en variables_float
+
+  // Si la variable $VAR no existe en el mapa, entonces crea un elemento con ese
+  // ID junto con el valor que el usuario ingresa. Si ya existe, lo omite.
+  // Se utiliza el método find y éste retorna un iterador. si lo que retorna es
+  // Map_variable_float.end(), entonces significa que $VAR no existe en el mapa.
+
   //Ingresa un token_variable en la cola de tokens
   //Además ingresa el nombre de la variable detectada en la cola de variables
-  Map_variables_float[variable] = get_variable_input(variable);
+  map <string, float>::iterator ite = Map_variables_float.find(variable);
+  if (ite == Map_variables_float.end())
+  {
+    Map_variables_float[variable] = get_variable_input(variable);
+  }
   t_infixExpression.push(token_variable);
   VariableQueue.push(variable);
   return true;
